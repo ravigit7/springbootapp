@@ -68,9 +68,3 @@ pipeline {
         } 
     }
 }
-
-sonar-project.properties
-sonar.projectKey=iam-aredla_springbootapp
-sonar.projectName=springbootapp
-sonar.organization=iam-aredla
-sonar.exclusions=*/.java
