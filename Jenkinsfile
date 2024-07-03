@@ -10,7 +10,7 @@ pipeline {
     stages {
         stage('Checkout From Git') {
             steps {
-                git branch: 'main', url: 'https://github.com/bkrrajmali/springbootapp.git'
+                git branch: 'main', url: 'https://github.com/iam-aredla/springbootapp.git'
             }
         }
         stage('Maven Build') {
@@ -29,7 +29,7 @@ pipeline {
             steps {
                script {
                 withSonarQubeEnv('sonar-server') {
-                sh ''' $SCANNER_HOME/bin/sonar-scanner -Dsonar.projectName=springbootapp -Dsonar.projectKey=bkrrajmali_springbootapp '''
+                sh ''' $SCANNER_HOME/bin/sonar-scanner -Dsonar.projectName=springbootapp -Dsonar.projectKey=iam-aredla_springbootapp '''
                 }
                }
             }
@@ -37,7 +37,7 @@ pipeline {
         stage ('Quality Gate'){
         steps {
             script {
-                waitForQualityGate abortPipeline: false, credentialsId: 'sonar'
+                waitForQualityGate abortPipeline: false, credentialsId: 'sonar-token'
             }
         }
       }
