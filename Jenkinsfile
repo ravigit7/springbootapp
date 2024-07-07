@@ -11,7 +11,7 @@ pipeline {
     stages {
         stage('Checkout From Git') {
             steps {
-                git branch: 'main', url: 'https://github.com/iam-aredla/springbootapp.git'
+                git branch: 'main', url: 'https://github.com/ravigit7/springbootapp.git'
             }
         }
         stage('Maven Build') {
@@ -30,7 +30,7 @@ pipeline {
             steps {
                 script {
                     withSonarQubeEnv('sonar-server') {
-                        sh '''$SCANNER_HOME/bin/sonar-scanner -Dsonar.projectName=springbootapp -Dsonar.projectKey=iam-aredla_springbootapp'''
+                        sh '''$SCANNER_HOME/bin/sonar-scanner -Dsonar.projectName=springbootapp -Dsonar.projectKey=ravigit7_springbootapp'''
                     }
                 }
             }
