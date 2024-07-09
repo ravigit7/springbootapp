@@ -1,4 +1,4 @@
-def registry = 'https://varedla.jfrog.io/'
+def registry = 'https://springbootappncp.jfrog.io/'
 
 pipeline {
     tools {
