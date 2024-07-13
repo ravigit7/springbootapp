@@ -1,4 +1,4 @@
-def registry = 'https://springbootappncp.jfrog.io/'
+def registry = 'https://springbootappncp.jfrog.io'
 
 pipeline {
     tools {
@@ -52,7 +52,7 @@ pipeline {
                         "files": [
                             {
                                 "pattern": "target/springbootApp.jar",
-                                "target": "ncpl-libs-release",
+                                "target": "ncpl-libs-release-local",
                                 "flat": "false",
                                 "props": "${properties}",
                                 "exclusions": ["*.sha1", "*.md5"]
